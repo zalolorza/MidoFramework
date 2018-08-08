@@ -5,7 +5,9 @@ WordPress plugin that runs an MVC framework the top of WordPress. It uses [Timbe
 
 1. Installation
 2. [Bootstrap & Init](#Bootstrap-and-initialization)
-3. [Controllers](#Controllers)
+3. [Controllers](#3.Controllers)
+3. [Controllers](#3-Controllers)
+3. [Controllers](#-3-Controllers)
 
 
 ## 1. Installation
