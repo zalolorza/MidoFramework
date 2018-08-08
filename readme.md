@@ -450,11 +450,35 @@ search.twig
 ---
 
 # 6. Actions and filters
-1. This is
+Mido comes equiped with multiple filters and actions (generics and controller-specific, as well as action-specific). For instance, one important generic filter is the 'render' filter. With that filter you can inject data in the views. 
+
+The next example of a manager injects a `nav` object with menus to all views with the filter `render`. It's also using the `filter_` Mido's fucntionality extended from `MidoManager`.
+
+```php
+
+class MenusManager extends MidoManager {
+
+	function filter_render($context){
+
+		$context['nav'] = array(
+			'main' => self::get_menu('main),
+			'footer_sitemap' => self::get_menu('footer_sitemap')
+		);
+
+		return $context;
+
+	}
+	
+	function get_menu($name){
+		// here the heavy work
+	}
+
+}
+
+```
 
 ---
 
----
 
 # 7. Others
 1. This is
