@@ -85,7 +85,7 @@ controller = FormController
 action = send
 `````
 
-In that case it'll set a route like www.domain.com/contact/send that will be controlled by:
+In that case it'll set a route like `www.domain.com/contact/send` that will be controlled by:
 
 ````
 class FormController extends MidoController  {
@@ -95,13 +95,47 @@ class FormController extends MidoController  {
 	
 		}
 } 
-```
+`````
+
+You could also pass an argument, for example: `[contact/send/:formId]`
 
 
 ### scripts.ini
 
+Here you can:
+
+* Set the scripts version in order to bust cache
+* Set 'false' to default WordPress jquery script
+* Set custom JS and CSS scripts that'll be included in the theme automatically:
+
+````
+[js]
+
+build_js = '/dist/build.js'
+other_js_file = '/dist/other.js'
+
+[css]
+
+build_css = '/dist/build.css'
+`````
+
+* And you can also set specific scripts for specific controllers and/or actions. 
+
+````
+[ControllerName_js]
+
+version = 0.1
+scriptnameforacontroller = '/dist/scriptname_controller.js'
+
+[ControllerName_ActionName_js]
+
+version = 0.1
+scriptnameforaspecificaction = '/dist/scriptname_action.js'
+
+`````
 
 ## Controllers
+
 ### Posts and CPT
 ### Pages
 ### Taxonomies
