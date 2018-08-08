@@ -10,8 +10,9 @@ WordPress plugin that runs an MVC framework the top of WordPress. It uses [Timbe
 3. [Controllers](#3-controllers)
 4. [Managers](#4-managers)
 5. [Views](#5-views)
-6. [Others](#6-others)
-7. [Examples](#7-examples)
+6. [Actions and filters](#6-actions-and-filters)
+7. [Others](#7-others)
+8. [Examples](#8-examples)
 
 
 
@@ -364,24 +365,55 @@ class PagesController extends MidoController {
 
 ## Herarchy
 
+### Post Type Single
+```
+single_{{post_type}}.twig
+single.twig
+````
+
+### Post Type Archive
+```
+archive_{{post_type}}.twig
+index_{{post_type}}.twig
+archive.twig
+index.twig
+````
+
 ### Taxonomies
-```php
-$taxName.'.twig'
-'tax_'.$taxName.'.twig'
-'archive_'.$taxName.'.twig'
-'index_'.$taxName.'.twig'
-'archive.twig'
-'index.twig'
+```
+{{tax_name}}.twig
+tax_{{tax_name}}.twig
+archive_{{tax_name}}.twig
+index_{{tax_name}}.twig
+archive.twig
+index.twig
+````
+
+### Search
+```
+search.twig
+````
+
+### Error 404
+```
+404.twig
 ````
 
 ---
 
-# 6. Others
+# 6. Actions and filters
 1. This is
 
 ---
 
-# 7. Examples
+---
+
+# 7. Others
+1. This is
+
+---
+
+# 8. Examples
 1. This is
 
 **This plugin is still experimental, DON'T use it in your sites (I do because I know my code)**
