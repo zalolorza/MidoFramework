@@ -250,7 +250,7 @@ class NameController extends MidoController  {
 	}
 } 
 ````
-1) Set any var as a variable within the scope of the controller to make it available in the Twig view. 
+1) Set any var as a variable within the scope of the controller to make it available in the Twig view. The controller comes already hydratated with the variables that you'd expect. For example, in the single view it comes hydratated with all post information (title, date, content, metadata,...) as `$this->post`, and the archive comes with a complete list of posts as `$this->posts`.
 
 2) Use `$this->render()` to render the default Twig view. Mido uses a template hierarchy system that mimics and extends [WordPress template hierarchy](https://developer.wordpress.org/themes/basics/template-hierarchy/). 
 
