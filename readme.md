@@ -21,8 +21,22 @@ if (class_exists('Mido')){
 ````
 
 
-## MVC structure
-1. This is
+# The MVC Framework
+
+## Theme directory structure
+
+Mido will start the php app from the directory where `bootstrap.php` is allocated. Within this directory, the basic structure should be something like (you can change that):
+
+```
+/app/ (can be any directory inside the theme)
+|-- controllers
+|-- init
+|-- managers
+|-- views
+bootstrap.php
+bootstrapAdmin.php
+````
+
 
 ### Controllers
 #### Posts and CPT
