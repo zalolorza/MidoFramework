@@ -114,7 +114,14 @@ This also applies for `Managers` that extend `MidoManager`.
 
 ## Init
 
-Basic configuration of the theme
+Basic configuration of the theme.
+
+
+You can change the init directory in `bootstrap.php`:
+
+```php
+define('INIT_DIR', BOOTSTRAP_DIR.'/init');
+```
 
 
 #### admin.ini
@@ -232,6 +239,14 @@ class NameController extends MidoController  {
 ````
 
 Like other MVC PHP frameworks, Mido uses a Controller->Action architecture. Anytime a controller is called, there are global actions that also run besides the action endpoint. For example, anytime a controller is called, it first runs a `_init()` action, before calling any other action. Here you can set global functionalities for the controller.
+
+### Controllers directory
+
+You can change the controllers directory in `bootstrap.php`:
+
+```php
+define('CONTROLLERS_DIR', BOOTSTRAP_DIR.'/controllers');
+```
 
 ### Render
 
@@ -371,10 +386,28 @@ Managers can extend `MidoManager` class, so they can benefit of the [actions and
 
 Use the managers to add functionality to your theme. Managers are classes that query, parse, create or modify data. Managers should be only instanced within the bootstrap files or the controllers, but never called by themselves from the managers directory. Managers itself are simply a library of PHP structured classes.
 
+
+You can change the managers directory in `bootstrap.php`:
+
+```php
+define('MANAGERS_DIR', BOOTSTRAP_DIR.'/managers');
+```
+
 ---
 
 # 5. Views
-1. This is
+Mido is rendering [Twig](https://twig.symfony.com/) views with [Timber](https://timber.github.io/docs/). Any timber functionality is available in Mido inside the more abstract class `Mido`.
+
+Twig templates must be located under the same directory, but with any subdirectories setup. Mido will build a list of templates, no matter in wich subdirectory are located.
+
+You can change the views directory name from the bootstrap:
+
+```php
+define('INIT_DIR', BOOTSTRAP_DIR.'/init');
+define('CONTROLLERS_DIR', BOOTSTRAP_DIR.'/controllers');
+define('MANAGERS_DIR', BOOTSTRAP_DIR.'/managers');
+define('VIEWS_DIR', 'php/views');
+```
 
 ## Herarchy
 
