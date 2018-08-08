@@ -1,4 +1,4 @@
-# MidoFramework - An MVC framework for WordPress
+# MidoFramework - A MVC framework for WordPress
 WordPress plugin that runs an MVC framework the top of WordPress. It uses [Timber](https://timber.github.io/) to render [Twig](https://twig.symfony.com/) views.
 
 ## Installation
@@ -20,9 +20,6 @@ if (class_exists('Mido')){
 
 ````
 
-
-# The MVC Framework
-
 ## Theme directory structure
 
 Mido will start the php app from the directory where `bootstrap.php` is allocated. Within this directory, the basic structure should be something like (you can change that):
@@ -40,7 +37,7 @@ Mido will start the php app from the directory where `bootstrap.php` is allocate
 
 
 
-## Bootstrap
+# Bootstrap & Init
 
 * `bootstrap.php` is always called when the framework is initialized. Here you can set some globals, like Mido Globals:
 
@@ -105,27 +102,27 @@ This also applies for `Managers` that extend `MidoManager`.
 Basic configuration of the theme
 
 
-### admin.ini
+##### admin.ini
 
 Basic admin configurations. Mido sets a completely custom admin, with custom styles, editors, toolbars,...
 
-### cpt.ini
+##### cpt.ini
 
 Custom Post Types setup
 
-### taxonomies.ini
+##### taxonomies.ini
 
 Taxonomies setup
 
-### images.ini
+##### images.ini
 
 Images setup. Here you can set custom sizes or edit the default ones, set the crop quality, and add new MIME types.
 
-### menus.ini
+##### menus.ini
 
 Theme menus setup
 
-### pages_templates.ini
+##### pages_templates.ini
 
 Page templater. In order to avoid php templates, twig templates are set here. Example:
 
@@ -137,7 +134,7 @@ Contact = contact.twig
 
 This will be used in the PagesController and as a page template selector.
 
-### routes.ini
+##### routes.ini
 
 Custom router that overrides WordPress endpoints (if you want). It stablishes a relationship between routes and controllers. Any route set here will override WordPress router. It's possible to use dynamic segments.
 
@@ -164,7 +161,7 @@ class FormController extends MidoController  {
 You could also pass an argument, for example: `[contact/send/:formId]`
 
 
-### scripts.ini
+##### scripts.ini
 
 Here you can:
 
