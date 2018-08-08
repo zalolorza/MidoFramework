@@ -1,5 +1,5 @@
 # MidoFramework - A MVC framework for WordPress
-WordPress plugin that runs an MVC framework the top of WordPress. It uses [Timber](https://timber.github.io/) to render [Twig](https://twig.symfony.com/) views.
+WordPress plugin that runs an MVC framework the top of WordPress. It uses [Timber](https://timber.github.io/) to render [Twig](https://twig.symfony.com/) views. **This plugin is still experimental and Beta, don't use it in your sites (I do because I know my code)**
 
 ## Installation
 Just install it like a regular plugin.
@@ -237,11 +237,14 @@ class NameController extends MidoController  {
 
 2) Use `$this->render()` to render the default Twig view. Mido uses a template hierarchy system that mimics and extends [WordPress template hierarchy](https://developer.wordpress.org/themes/basics/template-hierarchy/). 
 
-3) You can skip Mido's hierarchy by specifying your own template: `$this->render('your-better-template.twig')`. Directory is not requiered, only the file name. It will render the first twig file with the same filename located in any subdirectory inside of `/views`.
+3) You can skip Mido's hierarchy by specifying your own template: `$this->render('your-better-template.twig')`. Directory is not requiered, only the filename. Mido will render the first twig file that maches the filename and it's located in any subdirectory inside of `/views`.
 
-### Posts and CPT
-### Pages
-### Taxonomies
+## Posts and CPT
+
+Each post
+
+## Pages
+## Taxonomies
 
 ## Managers
 1. This is
