@@ -494,9 +494,11 @@ class MenusManager extends MidoManager {
 # 7. Others
 `Mido` namespace comes equiped with tons of methods, extending the WordPress and Timber functions. I still need to build a real documentation for that.
 
+There are many other classes in the Framework, like `MidoMail`, that renders mails with twig files and uses smtp mail instead of WordPress simple PHP mail.
+
 ---
 
 # 8. Examples
-1. This is
+You can
 
 **This plugin is still experimental, DON'T use it in your sites (I do because I know my code)**
