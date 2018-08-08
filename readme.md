@@ -196,7 +196,7 @@ build_css = '/dist/build.css'
 
 * And you can also set specific scripts for specific controllers and/or actions. 
 
-````
+````ini
 [ControllerName_js]
 
 version = 0.1
@@ -257,9 +257,99 @@ class NameController extends MidoController  {
 
 ## Posts and CPT
 
-Each post
+Each post type has its own controller. For example, the "post" post type will have a controller named `PostController.php` and will look like:
+
+
+```php
+class PostController extends MidoController {
+
+	function _init(){
+		// Anytime the controller is called
+	}
+
+	function index(){
+
+		// Archive
+		$this->render();
+		
+	}
+
+	function single(){
+
+		// Single
+		$this->render();
+		
+	}
+
+	function category(){
+
+		// Categories
+		$this->render();
+
+	}
+	
+	function tag(){
+
+		// tags
+		$this->render();
+
+	}
+
+
+}
+````
+
+For custom post types is the same: a CPT named `custom-post-type` will be controlled by `CustomPostTypeController` in `CustomPostTypeController.php`.
+
+Taxonomies are actions inside of the post type controller if they are referenced to a single post type. If those taxonomies are used in more than one post type, then we need a new controller for each taxonomy.
+
 
 ## Pages
+
+Pages are all fired from a single controller `PagesController.php`. Each action refers to a specific page template. For example, if we have `home.twig`, `about.twig` and `contact.twig` as page templates, the controller will look like:
+
+```php
+
+class PagesController extends MidoController {
+
+	function _init(){
+			
+	}
+
+	function page(){
+		//default template (no template)
+		$this->render();
+		
+	}
+
+
+	function home(){
+
+		//it renders 'home.twig'
+		$this->render();
+
+	}
+
+	function about(){
+
+		$this->render();
+
+	}
+
+
+	function contact(){
+
+		$this->render();
+
+	}
+
+
+}
+
+
+```
+
+
 ## Taxonomies
 
 ---
