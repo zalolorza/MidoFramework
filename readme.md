@@ -37,9 +37,67 @@ Mido will start the php app from the directory where `bootstrap.php` is allocate
 |-- bootstrapAdmin.php
 ````
 
-## /init
+
+## Bootstrap
+
+* `bootstrap.php` is always called when the framework is initialized. Here you can set some globals, like Mido Globals:
+
+````
+class Bootstrap extends MidoBootstrap {
+
+	function _init(){
+
+		define('INIT_DIR', BOOTSTRAP_DIR.'/init');
+		define('CONTROLLERS_DIR', BOOTSTRAP_DIR.'/controllers');
+		define('MANAGERS_DIR', BOOTSTRAP_DIR.'/managers');
+		define('VIEWS_DIR', 'php/views');
+	}
+}
+		  
+		  
+````
+
+* `bootstrapAdmin.php` is only called when the admin is initialized.
+
+````
+class BootstrapAdmin extends MidoBootstrap {
+
+	function _init(){
+
+		// any admin setup
+	}
+}
+`````
+
+### action_ and filter_
+
+Any method inside the classes `Bootstrap` and `BootstrapAdmin` that starts with `action_` equals to: `add_action()` WordPress function. The same with WordPress filters. For example:
+
+````
+class Bootstrap extends MidoBootstrap {
+
+	function action_admin_init(){
+
+		/* 	This equals to 
+		*
+		*	add_action('admin_init',function(){
+		*		
+		*	});
+		*
+		*/
+	}
+}
+`````
+
+The cool thing is that the scope inside the action will be the parent class.
+
+This also applies for `Managers` that extend `MidoManager`.
+
+
+## Init
 
 Basic configuration of the theme
+
 
 ### admin.ini
 
