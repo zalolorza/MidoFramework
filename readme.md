@@ -20,7 +20,7 @@ if (class_exists('Mido')){
 
 ````
 
-## Theme directory structure
+### Theme directory structure
 
 Mido will start the php app from the directory where `bootstrap.php` is allocated. Within this directory, the basic structure should be something like (you can change that):
 
@@ -68,7 +68,7 @@ class BootstrapAdmin extends MidoBootstrap {
 }
 `````
 
-### action_  and  filter_
+## action_  and  filter_
 
 Any method inside the classes `Bootstrap` and `BootstrapAdmin` that starts with `action_` equals to: `add_action()` WordPress function. The same with WordPress filters. For example:
 
@@ -102,27 +102,27 @@ This also applies for `Managers` that extend `MidoManager`.
 Basic configuration of the theme
 
 
-##### admin.ini
+#### admin.ini
 
 Basic admin configurations. Mido sets a completely custom admin, with custom styles, editors, toolbars,...
 
-##### cpt.ini
+#### cpt.ini
 
 Custom Post Types setup
 
-##### taxonomies.ini
+#### taxonomies.ini
 
 Taxonomies setup
 
-##### images.ini
+#### images.ini
 
 Images setup. Here you can set custom sizes or edit the default ones, set the crop quality, and add new MIME types.
 
-##### menus.ini
+#### menus.ini
 
 Theme menus setup
 
-##### pages_templates.ini
+#### pages_templates.ini
 
 Page templater. In order to avoid php templates, twig templates are set here. Example:
 
@@ -134,7 +134,7 @@ Contact = contact.twig
 
 This will be used in the PagesController and as a page template selector.
 
-##### routes.ini
+#### routes.ini
 
 Custom router that overrides WordPress endpoints (if you want). It stablishes a relationship between routes and controllers. Any route set here will override WordPress router. It's possible to use dynamic segments.
 
@@ -161,7 +161,7 @@ class FormController extends MidoController  {
 You could also pass an argument, for example: `[contact/send/:formId]`
 
 
-##### scripts.ini
+#### scripts.ini
 
 Here you can:
 
@@ -198,9 +198,9 @@ scriptnameforaspecificaction = '/dist/scriptname_action.js'
 
 
 
-## Controllers
+# Controllers
 
-### Basic controller sintaxis
+## Basic controller sintaxis
 ````
 class ControllerName extends MidoController  {
 
@@ -217,6 +217,25 @@ class ControllerName extends MidoController  {
 
 Like other MVC PHP frameworks, Mido uses a Controller->Action architecture. Anytime a controller is called, there are global actions that also run besides the action endpoint. For example, anytime a controller is called, it first runs a `_init()` action, before calling any other action. Here you can set global functionalities for the controller.
 
+### Render
+````
+class ControllerName extends MidoController  {
+
+	function _init(){
+	
+	}
+
+	function action(){
+	
+		$this->var_name = 'Hello dolly';
+		$this->render();
+	
+	}
+} 
+````
+1) Set any var as a variable of the controller to make it available in the Twig view. 
+
+2) Use `$this->render()` to render the default Twig view. Mido uses a template hierarchy system that mimics and improves [WordPress template hierarchy](https://developer.wordpress.org/themes/basics/template-hierarchy/)
 
 ### Posts and CPT
 ### Pages
