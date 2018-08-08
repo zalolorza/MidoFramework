@@ -367,7 +367,7 @@ Other controllers include endpoints like:
 # 4. Managers
 Managers are allways available from any controller (in other words, all php files inside of `/managers` will be included before calling the controller). 
 
-Managers can extend `MidoManager` class, so they can benefit of the [actions and filters Mido's functionality](#-action_-and  filter_).
+Managers can extend `MidoManager` class, so they can benefit of the [actions and filters Mido's functionality](#action_--and--filter_).
 
 ---
 
