@@ -13,7 +13,7 @@ Just install it like a regular plugin.
 ### functions.php
 In order to use the Mido in yourr theme, add the following in your `functions.php`:
 
-````
+```php
 if (class_exists('Mido')){
 
 	Mido::run();
@@ -47,7 +47,7 @@ Mido will start the php app from the directory where `bootstrap.php` is allocate
 
 * `bootstrap.php` is always called when the framework is initialized. Here you can set some globals, like Mido Globals:
 
-````
+```php
 class Bootstrap extends MidoBootstrap {
 
 	function _init(){
@@ -64,7 +64,7 @@ class Bootstrap extends MidoBootstrap {
 
 * `bootstrapAdmin.php` is only called when the admin is initialized.
 
-````
+```php
 class BootstrapAdmin extends MidoBootstrap {
 
 	function _init(){
@@ -78,7 +78,7 @@ class BootstrapAdmin extends MidoBootstrap {
 
 Any method inside the classes `Bootstrap` and `BootstrapAdmin` that starts with `action_` equals to: `add_action()` WordPress function. The same with WordPress filters. For example:
 
-````
+```php
 class Bootstrap extends MidoBootstrap {
 
 	function action_admin_init(){
@@ -132,7 +132,7 @@ Theme menus setup
 
 Page templater. In order to avoid php templates, twig templates are set here. Example:
 
-````
+```ini
 Home = home.twig
 About = about.twig
 Contact = contact.twig
@@ -146,7 +146,7 @@ Custom router that overrides WordPress endpoints (if you want). It stablishes a 
 
 Example:
 
-````
+```ini
 [contact/send/]
 controller = FormController
 action = send
@@ -154,7 +154,7 @@ action = send
 
 In that case it'll set a route like `www.domain.com/contact/send` that will be controlled by:
 
-````
+```php
 class FormController extends MidoController  {
 
 	function send(){
@@ -175,7 +175,7 @@ Here you can:
 * Set 'false' to default WordPress jquery script
 * Set custom JS and CSS scripts that'll be included in the theme automatically:
 
-````
+```ini
 [js]
 
 build_js = '/dist/build.js'
@@ -207,7 +207,8 @@ scriptnameforaspecificaction = '/dist/scriptname_action.js'
 # Controllers
 
 ## Basic controller sintaxis
-````
+
+```php
 class NameController extends MidoController  {
 
 	function _init(){
@@ -224,7 +225,8 @@ class NameController extends MidoController  {
 Like other MVC PHP frameworks, Mido uses a Controller->Action architecture. Anytime a controller is called, there are global actions that also run besides the action endpoint. For example, anytime a controller is called, it first runs a `_init()` action, before calling any other action. Here you can set global functionalities for the controller.
 
 ### Render
-````
+
+```php
 class NameController extends MidoController  {
 
 	function _init(){
