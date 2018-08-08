@@ -499,6 +499,7 @@ There are many other classes in the Framework, like `MidoMail`, that renders mai
 ---
 
 # 8. Examples
-You can
+You can find two real life examples in the [`/examples`](https://github.com/zalolorzaplanes/MidoFramework/tree/master/examples) folder.
+*
 
 **This plugin is still experimental, DON'T use it in your sites (I do because I know my code)**
