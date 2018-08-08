@@ -455,7 +455,7 @@ One of the reasons of using twig was that it can be rendered with javascript. Th
 
 I used that in order to build an isomorphic-like SPA with Mido and Backbone.js: https://gassiotllobet.com/. The first page is rendered server-side with Mido, and then the other pages are rendered in the client's side. I know is not technically an isomorphic app, but it does the trick.
 
-Another example is www.unno.com, where I only render certain components with javascript and twig.
+Another example is www.unno.com, where I only render certain dynamic components with javascript.
 
 ---
 
