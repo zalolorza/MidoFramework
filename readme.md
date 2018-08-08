@@ -398,16 +398,18 @@ define('MANAGERS_DIR', BOOTSTRAP_DIR.'/managers');
 # 5. Views
 Mido is rendering [Twig](https://twig.symfony.com/) views with [Timber](https://timber.github.io/docs/). Any timber functionality is available in Mido inside the more abstract class `Mido`.
 
-Twig templates must be located under the same directory, but with any subdirectories setup. Mido will build a list of templates, no matter in wich subdirectory are located.
+Twig templates must be located under the same directory, but with any subdirectories setup. Mido will build a list of templates, no matter in wich subdirectory are located. Filenames must be unique. 
 
-You can change the views directory name from the bootstrap:
+You can change the views directory in `bootstrap.php`:
 
 ```php
-define('INIT_DIR', BOOTSTRAP_DIR.'/init');
-define('CONTROLLERS_DIR', BOOTSTRAP_DIR.'/controllers');
-define('MANAGERS_DIR', BOOTSTRAP_DIR.'/managers');
 define('VIEWS_DIR', 'php/views');
 ```
+
+## Cache
+Mido uses Timber/Twig regular cache. Mido is compatible with all other WordPress caching tools, like [WP Rocket](https://wp-rocket.me/). 
+
+Currently I'm working in a caching split system that'll split the views and data in two stacks, one static and one dynamic. In that way I can apply an agressive cache to the components that doesn't require dynamic data. Imagine a site where the only dynamically rendered content are the user related parts (the minicart in a WooCommerce, or a localized price tag for example) :)
 
 ## Herarchy
 
