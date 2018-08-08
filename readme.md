@@ -351,7 +351,16 @@ class PagesController extends MidoController {
 ```
 
 
-## Taxonomies
+## Other controllers
+
+Other controllers include endpoints like: 
+* Taxonomies 
+* Authors & Users
+* WooCommerce
+* Exeptions
+* API REST
+* Ajax
+* Mail
 
 ---
 
