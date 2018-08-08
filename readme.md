@@ -37,7 +37,7 @@ Mido will start the php app from the directory where `bootstrap.php` is allocate
 |-- bootstrapAdmin.php
 ````
 
-## Init
+## /init
 
 Basic configuration of the theme
 
@@ -134,7 +134,25 @@ scriptnameforaspecificaction = '/dist/scriptname_action.js'
 
 `````
 
-## Controllers
+## /Controllers
+
+### Basic controller sintaxis
+````
+class ControllerName extends MidoController  {
+
+	function _init(){
+	
+	}
+
+	function action(){
+
+	
+	}
+} 
+````
+
+Like other MVC PHP frameworks, Mido uses a Controller->Action architecture. Anytime a controller is called, there are global actions that also run besides the action endpoint. For example, anytime a controller is called, it first runs a `_init()` action, before calling any other action. Here you can set global functionalities for the controller.
+
 
 ### Posts and CPT
 ### Pages
