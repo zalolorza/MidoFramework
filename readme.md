@@ -500,6 +500,18 @@ There are many other classes in the Framework, like `MidoMail`, that renders mai
 
 # 8. Examples
 You can find two real life examples in the [`/examples`](https://github.com/zalolorzaplanes/MidoFramework/tree/master/examples) folder.
-*
+
+* `dws2018` is the theme used in http://dwsprinting.com/
+* `mimcord2018` is the theme used in https://mimcord.com/
+
+Other sites using Mido:
+
+* https://www.unno.com (Mido + WooCommerce)
+* https://www.theunexpected.barcelona/ (Mido + Vue.js  + WP REST API)
+* https://gassiotllobet.com/ (Mido + Backbone.js + WP REST API)
+* https://jabss.com/
+* http://www.bicnic.com/
+* http://www.betlem.es/
+
 
 **This plugin is still experimental, DON'T use it in your sites (I do because I know my code)**
