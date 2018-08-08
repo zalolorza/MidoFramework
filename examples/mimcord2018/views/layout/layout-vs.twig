@@ -1,0 +1,23 @@
+{% extends "layout.twig"%}
+
+{% block scrollcontent %}
+
+<div id="vs-main" class="vs-controller vs-controller-active">
+	<div class="vs-controller-content">
+
+      {% block vs_main %}
+
+      {% endblock %}
+
+			{{ parent() }}
+
+	</div>
+</div>
+
+
+{% block vs_overlays %}
+
+{% endblock %}
+
+
+{% endblock %}

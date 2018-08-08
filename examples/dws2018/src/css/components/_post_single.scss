@@ -1,0 +1,12 @@
+ul.categories {
+    @include media-breakpoint-down(sm){
+        margin-bottom:0 !important;
+        margin-top:47px;
+    }
+}
+
+h3.categories-title {
+    @include media-breakpoint-down(sm){
+        margin-top:20px;
+    }
+}

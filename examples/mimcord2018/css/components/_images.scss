@@ -1,0 +1,12 @@
+*[data-lazyload] figure,
+figure[data-lazyload],
+.figure[data-lazyload] {
+  background-image: none !important;
+}
+
+
+.image-background {
+  background-position:center center !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

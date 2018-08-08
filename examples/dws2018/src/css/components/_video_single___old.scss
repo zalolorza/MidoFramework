@@ -1,0 +1,65 @@
+.video-center-wrapper {
+    width:100%;
+    height:auto;
+
+    padding-top:18vh;
+
+
+    @include media-breakpoint-down(lg){
+        padding-top:22vh;
+    }
+    
+    @include media-breakpoint-down(sm){
+        padding-top:30vh;
+    }
+
+    @include media-breakpoint-down(xs){
+        padding-top:40vh;
+    }
+
+    @media only (orientation : portrait) {
+        position:absolute;
+        top:48%;
+        left:0;
+        @include translate(0,-50%,0);
+        padding-top:0;
+        padding-bottom:0;
+    }
+
+    background:$dark-blue;
+    text-align: center;
+    h1 {
+        text-align: center;
+        max-width: none;
+    }
+}
+
+.video-iframe-wrapper {
+    position:relative;
+    display:block;
+    overflow:hidden;
+    overflow: hidden;
+    width:100%;
+    .padding-push {
+        width:100%;
+        padding-bottom:56.25%; 
+    }
+    background:transparent;
+    max-height: 100vh;
+    iframe {
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%  !important;
+        height:100% !important;
+    }
+}
+
+body.single-video {
+    background:$dark-blue;
+}
+
+.full-page-video {
+    height:auto;
+    min-height: 100vh;
+}

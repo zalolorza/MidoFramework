@@ -1,0 +1,13 @@
+{% for module in modules %}
+
+    {% if module.acf_fc_layout == 'gallery' %}
+        {% include 'gallery_' ~ module.format ~ '.twig' with { gallery : module.gallery }  %}
+    {% elseif module.acf_fc_layout == 'headline_text' %}
+        <section class="headline_text section {{is_simple and loop.first ? 'section-first'}}">
+            {% include module.acf_fc_layout ~ '.twig' with {text:module.text,title:module.title} %}
+        </section>
+    {% else %}
+        {% include module.acf_fc_layout ~ '.twig'  %}
+    {% endif %}
+
+{% endfor %}

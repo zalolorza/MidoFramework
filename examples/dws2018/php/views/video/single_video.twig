@@ -1,0 +1,22 @@
+
+{% extends "layout.twig"%}
+
+
+{% block content %}
+
+<section class="headline_text section section-first">
+            {% include 'headline_text.twig' with {text:post.content,title:post.title} %}
+</section>
+
+<div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-10 col-lg-12 ">
+                        <div class="contact-separator" style="border-width:2px"></div>
+                    </div>
+                </div>
+            </div>
+
+{% endblock %}
+
+
+

@@ -1,0 +1,12 @@
+$src_path : '../../';
+@import '../global/fonts';
+
+
+.page-template-contact-twig {
+    font-weight:bold;
+    color:$dark-blue;
+    p{
+        margin-bottom:0;
+    }
+}
+

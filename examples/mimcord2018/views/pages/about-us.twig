@@ -1,0 +1,64 @@
+{% extends "layout.twig" %}
+
+
+
+{% block main %}
+
+<main class="regular-content" id="about-us">
+        <div class="container">
+
+
+            <section class="row about-us-section">
+                {% include 'title-and-text-about.twig' with {title: page.title_1, text: page.content} %}
+            </section>
+
+
+
+            <section class="row about-us-section">
+
+                {% include 'title-and-text-about.twig' with {title: page.title_2, text: page.text_2} %}
+               
+
+                <div class="clear"></div>
+
+                <div id="history-timeline">
+
+                    
+                    {% for event in page.milestones %}
+                        {% include 'milestone-timeline-about.twig' %}
+                    {% endfor %}
+
+                </div>
+
+            </section>
+
+
+
+
+
+            <section class="row about-us-section" id="mission">
+
+                {% include 'title-and-text-about.twig' with {title: page.title_3, text: page.text_3} %}
+                <div class="clear"></div>
+                <div class="col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2 col-xxs-12 col-xxs-offset-0 image-mission text-center">
+                    <div class="missio-image-wrapper"><img class="img-responsive" src="{{page.img_3}}"></div>
+                </div>
+
+            </section>
+
+        </div>
+
+        <div id="about-us-gallery">
+         {% for image in page.slider %}
+                {% set img = TimberImage(image) %}
+                <div class="slide">
+                    	<a href="{{img.src('large')}}" class="image-link" title="{{img.title}}">
+                            <img src="{{ img|resize(489, 369) }}" >
+                        </a>
+                </div>
+          {% endfor %}
+        </div>
+</main>
+    
+
+{% endblock %}

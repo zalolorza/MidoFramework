@@ -1,0 +1,32 @@
+<section class="big-video section">
+
+    {% if module.contained %}
+        <div class="container">
+            <div class="row">
+                <div class="col-10 offset-1 offset-lg-0 col-lg-12">
+                <div class="video-wrapper-contained">
+        {% set width = 1200 %}
+        {% set height = 824 %}
+    {% else %}
+        {% set width = 1440 %}
+        {% set height = 860 %}
+    {% endif %}
+
+    {% set img = TimberImage(module.img) %}
+    <picture>
+            <source srcset="{{ img|resize('750', '384') }}" media="(max-width: 414px)" />
+            <source srcset="{{ img|resize('1440', '982') }}" media="(max-width: 768px)" />
+            <img class="img-responsive" src="{{ img|resize(width, height) }}" />
+    </picture>
+    
+    {% include 'video_background.twig' with {video:module.video_loop} %}
+    {% include 'video_vimeo.twig' with {video:module.video} %}
+
+     {% if module.contained %}
+            </div>
+            </div>
+        </div>
+        </div>
+    {% endif %}
+
+</section>

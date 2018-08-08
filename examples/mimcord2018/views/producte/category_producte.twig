@@ -1,0 +1,63 @@
+{% extends "layout.twig" %}
+
+
+
+{% block main %}
+
+<main>
+    {% for product in products %}
+
+        <div class="product-row">
+
+            <div class="col-sm-6 col-xs-12">
+                <div class="row col-left">
+                
+                {% set img0 =  TimberImage(product.slider.0)|resize(630, 357) %}
+                 <img src="{{img0}}" class=""/>
+                    <div class="visisble-xs popup-trigger-img" data-items='[{% for image in product.slider %}{% set img = TimberImage(image) %}
+                                {
+                                    "src": "{{img.src('large')}}",
+                                    "title": "{{img.title}}"
+                                }{{loop.last ? '':','}}
+                        {% endfor %}
+                    ]'></div>
+                    <div class="clear"></div>
+                 </div>
+            </div>
+
+            <div class="image-background-wrapper col-left hidden-xs">
+                <div class="image-background-wrapper-internal">
+                    <div class="image-background " style="background-image:url({{img0}})"></div>
+                    <div class="popup-trigger" data-items='[
+                        {% for image in product.slider %}
+                                {% set img = TimberImage(image) %}
+                                {
+                                    "src": "{{img.src('large')}}",
+                                    "title": "{{img.title}}"
+                                }{{loop.last ? '':','}}
+                        {% endfor %}
+                    ]'></div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-xs-12">
+                <div class="row col-right">
+                    <div class="product-content">
+                        <h2>{{product.post_title}}</h2>
+                        <div class="description">{{product.post_content}}</div>
+                        {% if product.technical_sheet %}
+                            <a href="{{product.technical_sheet.url}}" class="download-link" download>{{texts.datasheet}}</a>
+                        {% endif %}
+                    </div>
+                 </div>
+            </div>
+
+            <div class="clear"></div>
+
+        </div>
+        
+
+    {% endfor %}
+ </main>   
+
+{% endblock %}

@@ -1,0 +1,29 @@
+<section class="gallery-2-col section">
+
+    <div class="container ">
+        <div class="row">
+            <div class="col-10 offset-1 offset-lg-0 col-lg-12">
+                <div class="row justify-content-between-custom">
+
+                        {% for image in gallery %}
+                             {% set img = TimberImage(image) %}
+                             <div class="col-12 col-md-6 item">
+                                    <h5 class="title">{{img.title}}</h5>
+                                    <div class="relative hover-video">
+                                        <img src="{{img|resize(580,326)}}" class="img-responsive">
+                                        {% include 'video_vimeo.twig' with {video:image.video} %}
+                                    </div>
+                            </div>
+                        {% endfor %}
+                       
+
+                </div>
+            </div>
+
+        </div>
+        
+        </div>
+    </div>
+    
+    
+</section>

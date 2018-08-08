@@ -1,0 +1,45 @@
+{% extends "layout.twig"%}
+
+{% block content %}
+
+    {% for module in page.get_field('contact_modules') %}
+        <section class="section {{loop.first ? 'section-first'}} section-contact">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-10 offset-1 offset-lg-0 col-md-4 col-lg-5 title headline-text-title">
+                        <h2>{{module.title}}</h2>
+                    </div>
+
+                    <div class="col-10 offset-1 col-md-5 col-lg-6 headline-text-text headline-text-text-contact">
+                        {{module.text}}
+                    </div>
+                </div>
+            </div>
+
+            {% if module.add_map and module.map %}
+            <div class="container container-map">
+                <div class="row">
+                    <div class="offset-0 col-12 offset-md-1 col-md-10 offset-lg-6 col-lg-6">
+                        {% include 'map.twig' with {map:module.map, address: module.text} %}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </section>
+
+        {# if not loop.last #}
+
+            <div class="container {{ module.add_map and module.map ? 'd-none d-lg-block'}}">
+                <div class="row justify-content-center">
+                    <div class="col-10 col-lg-12 ">
+                        <div class="contact-separator"></div>
+                    </div>
+                </div>
+            </div>
+
+        {# endif #}
+
+    {% endfor %}
+
+{% endblock %}

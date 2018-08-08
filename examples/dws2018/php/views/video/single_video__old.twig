@@ -1,0 +1,23 @@
+
+{% extends "layout.twig"%}
+
+
+{% block header %}
+    <div class="full-page full-page-video">
+        {% include ('nav.twig') %}
+            <div class="video-center-wrapper">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-10 col-lg-12">
+                            <h1 class="_condensed text-white">{{post.name}}</h1>
+                            <div class="video-iframe-wrapper">
+                                  <div class="padding-push"></div>
+                                {{post.get_field('video')}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+{% endblock header %}
+

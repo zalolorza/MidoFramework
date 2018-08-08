@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>{{wp_title ? wp_title :'Mimcord'}}</title>
+
+
+
+	{{ wp_head }}
+
+
+	<meta name="HandheldFriendly" content="True">
+     <meta name="MobileOptimized" content="320">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#085db1">
+<meta name="msapplication-TileColor" content="#085db1">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<meta name="theme-color" content="#085db1">
+
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+	<body class="{{body_class}} {{header.body_class}}">
+
+		{% include ('header.twig') %}
+
+		{% block main %}
+		{% endblock %}
+
+		{% include ('footer.twig') %}
+
+		{% include ('cookies.twig') %}
+
+		{{ wp_footer }}
+
+		
+	</body>
+
+</html>

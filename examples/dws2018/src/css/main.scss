@@ -1,0 +1,48 @@
+$src_path : '../';
+  @import 'global/fonts';
+/*  ==========================================================================
+  Libs
+  ========================================================================== */
+
+  @import '~slick-carousel/slick/slick.scss';
+  @import '~lity/dist/lity.css';
+
+
+  /*  ==========================================================================
+  Global
+  ========================================================================== */
+
+  @import 'global/normalize';
+  
+
+  /*  ==========================================================================
+  Components
+  ========================================================================== */
+
+  @import 'components/layout';
+  @import 'components/lists';
+  @import 'components/header';
+  @import 'components/nav';
+  @import 'components/buttons';
+  @import 'components/footer';
+  @import 'components/newsletter';
+  @import 'components/images';
+  @import 'components/slider';
+  @import 'components/section';
+  @import 'components/posts_featured';
+  @import 'components/post_single';
+  @import 'components/posts_archive';
+  @import 'components/home';
+  @import 'components/video';
+  @import 'components/capabilities';
+  @import 'components/gallery_3_col';
+  @import 'components/gallery_2_col';
+  @import 'components/about';
+  @import 'components/headline_text';
+  @import 'components/contact';
+  @import 'components/3cols_text';
+  @import 'components/video_single';
+  @import 'components/hover_zoom';
+
+  
+  

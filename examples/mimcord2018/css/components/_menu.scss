@@ -1,0 +1,214 @@
+#menu, #login-page {
+    position: fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    z-index: 99999;
+    display:none;
+    &#login-page {
+        position: relative;
+        width:100%;
+        height:100vh;
+        min-height:650px;
+        display:block;
+        z-index: 1;
+    }
+    .background-wrapper,
+    .background-wrapper-login {
+        position:absolute;
+        width:100%;
+        height:100%;
+        top:0;
+        left:0;
+        opacity:0.95;
+        &.login-page {
+            opacity:1;
+            background-color:$blue;
+        }
+        .background-menu {
+            position:absolute;
+            width:25%;
+            height:100%;
+            top:0;
+            background-color:$blue;
+            opacity:0;
+            &.background-1 {
+                left:0;
+            }
+            &.background-2 {
+                left:25%;
+            }
+            &.background-3 {
+                left:50%;
+            }
+            &.background-4 {
+                left:75%;
+            }
+        }
+    }
+    .content-wrapper,
+    .content-wrapper-login {
+        position:absolute;
+        width:100%;
+        height:100%;
+        top:0;
+        left:0;
+        color:white;
+        .col-half {
+            position:absolute;
+            width:50%;
+            height:100%;
+            top:0;
+            &.col-half-left {
+                left:0;
+                .logo,
+                .logo-login {
+                    display:block;
+                    width:221px;
+                    height:43px;
+                    position: absolute;
+                    left:50%;
+                    top:50%;
+                    @include translate(-50%,-50%,0);
+                    text-indent: -9999em;
+                    background-repeat:no-repeat;
+                    overflow: hidden;
+                    background-image: url(../images/logo-white.svg);
+                    background-size: contain;
+                    -webkit-background-size: contain;
+                    background-position: center center;
+                    opacity:0;
+                    &.login-page {
+                        width:auto;
+                        height:auto;
+                        text-indent: 0;
+                        overflow: visible;
+                        background:none;
+                        opacity:1;
+                        a {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+                @include breakpoint('xs'){
+                    width:30%;
+                    .logo,
+                    .logo-login {
+                        display:none;
+                    }
+                }
+            }
+            &.col-half-right {
+                left:50%;
+                @include breakpoint('xs'){
+                    width:70%;
+                    left:30%;
+                   
+                    &.col-half-right-login {
+                        width:100%;
+                        left:0;
+                        border-left:36px solid transparent;
+                        border-right:36px solid transparent;
+                        .menu-content-login {
+                            left:50%;
+                            @include translate(-50%,-50%,0);
+                            width:100%;
+                        }
+                    }
+                }
+                .menu-content,
+                .menu-content-login {
+                    position:absolute;
+                    padding-left:0;
+                    padding-bottom: 0;
+                    list-style: none;
+                    left:0;
+                    top:50%;
+                    @include translate(0,-50%,0);
+                    line-height: 1em;
+                    padding-bottom:20px;
+                    @include breakpoint('xs'){
+                        &.menu-content-login {
+                            padding-top: 60px;
+                        }
+                    }
+                    li {
+                        padding-left: 0;
+                        opacity:0;
+                        a {
+                            color:white !important;
+                            text-decoration: none;
+                            @include transition(0.3s);
+                            overflow: visible;
+                            line-height:1em;
+                            padding-top:20px;
+                            display:inline-block;
+                            &:hover {
+                                opacity:0.5;
+                            }
+                        }
+                    }
+                }
+                .tagline {
+                    position:absolute;
+                    left:0;
+                    top:49px;
+                    opacity:0;
+                    max-width: 80%;
+                }
+                .copyright,
+                .copyright-login {
+                    position:absolute;
+                    left:0;
+                    bottom:43px;
+                    opacity:0;
+                    &.login-page {
+                        opacity:1;
+                    }
+                }
+                
+            }
+        }
+    }
+}
+
+
+.close-menu {
+    position:absolute;
+    display:block;
+    top:34px;
+    left:40px;
+    width:29px;
+    height:29px;
+    cursor:pointer;
+    border:3px solid transparent;
+
+
+    span {
+        display:block;
+        position:absolute;
+        left:0%;
+        height:2px;
+        background:white;
+
+
+        @include transform-origin(0% 50%);
+        
+        &.line1 {
+
+            top:0%;
+            @include transform(translate3d(0%,-50%,0) rotate(45deg));
+
+        }
+
+        &.line2 {
+
+            top:100%;
+            @include transform(translate3d(0%,-50%,0) rotate(-45deg));
+
+        }
+    }
+
+}
+

@@ -1,0 +1,6 @@
+{% if video %}
+<div class="vimeo-trigger fill-absolute" data-vimeo="{{video|trim('https:', 'left')|trim('http:', 'left')}}">
+        <img src="{{theme.path}}/src/images/button-play.svg"class="vimeo-trigger-button">
+        <div class="vimeo-trigger-mask fill-absolute"></div>
+</div>
+{% endif %}

@@ -1,0 +1,5 @@
+{
+    "name": "gsap",
+    "version": "1.19.1",
+    "main": "./TweenMax.js"
+  }

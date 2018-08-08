@@ -1,0 +1,33 @@
+.gallery-2-col {
+  
+    .justify-content-between-custom {
+        @include media-breakpoint-down(md){
+            justify-content: space-between !important;
+        }
+    }
+    .item {
+        margin-bottom:59px;
+        
+        @include media-breakpoint-only(md){
+            margin-bottom:48px;
+            max-width:310px;
+            width:50%;
+        }
+        @include media-breakpoint-down(sm){
+            margin-bottom:54px;
+        }
+
+        img {
+            display:block;
+        }
+
+        .title {
+            font-size: inherit;
+            margin-bottom:0;
+            color:$dark-blue;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+    }
+}

@@ -1,0 +1,15 @@
+#private-area {
+    .h2-serif {
+        margin-bottom:25px;
+    }
+    padding-bottom:58px;
+    .downloads-group {
+        margin-bottom: 40px;
+    }
+    @include breakpoint('xxxs'){
+            .center-xxxs {
+                max-width:180px;
+                margin:0 auto;
+            }
+    }
+}

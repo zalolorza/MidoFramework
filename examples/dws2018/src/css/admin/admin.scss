@@ -1,0 +1,199 @@
+$src_path : '../../';
+@import '../global/fonts_import';
+
+.acf-field[data-name="tagline"] textarea {
+
+	@include font('condensed');
+	font-size:35px;
+	line-height: 35px;
+	letter-spacing: -0px;
+	color:$dark-blue;
+	text-transform: uppercase;
+
+}
+
+.title_h2.acf-field .acf-input textarea {
+	@include font('bold');
+	font-size: 78px;
+	line-height: 1.08em;
+	letter-spacing: -0.5px;
+	color:$dark-blue;
+	padding-top:0;
+	max-width: 6em;
+  
+}
+
+.title_h3.acf-field .acf-input input {
+	@include font('bold');
+	font-size: 18px;
+	color:$dark-blue;
+	text-transform:uppercase;
+  
+}
+
+.text.acf-field .acf-input textarea {
+	@include font();
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 300;
+  font-size:18px;
+  line-height:28px;
+  color:$black-50;
+  
+}
+
+.acf-postbox > .hndle .acf-hndle-cog,
+.acf-postbox > .hndle .acf-hndle-cog:hover {
+	display:none !important;
+}
+
+.wp-core-ui .button-primary {
+    text-shadow: none !important;
+}
+
+#wp-admin-bar-new-content {
+	display:none !important;
+}
+
+.hide-if-no-customize {
+	display:none !important;
+}
+
+#wp-admin-bar-site-name > .ab-item:before {
+
+	opacity:0 !important;
+	width:40px;
+}
+#wp-admin-bar-site-name > .ab-item {
+	position:relative;
+}
+#wp-admin-bar-site-name > .ab-item {
+	text-indent: -9999em !important;
+	width:74px;
+}
+#wp-admin-bar-site-name > .ab-item:after {
+	content:'';
+	width:70px;
+	height:33px;
+	position:absolute;
+	display:block;
+	top:7px;
+	left:10px;
+	 background-image: url(../../images/logo.svg) !important;
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
+
+body:not(.about-twig) #wp-content-wrap #wp-content-media-buttons {
+	display:none;
+}
+
+
+
+#wpadminbar .quicklinks .ab-empty-item,
+#wpadminbar .quicklinks #wp-admin-bar-wp-rocket .ab-empty-item,
+#wpadminbar .quicklinks #wp-admin-bar-WPML_ALS .ab-empty-item {
+    height: 46px !important;
+		line-height: 46px;
+		color:white !important;
+		img#wpml_als_help_link {
+			display:none;
+		}
+}
+
+body:not(.legal-notes-twig):not(.about-us-twig):not(.racing-twig)
+	{ 
+		iframe#content_ifr {
+		//height:100px !important;
+	}
+}
+
+.acf-field[data-name="highlights"] iframe {
+	max-height: 60px !important;
+}
+
+.attachment-details .setting[data-setting="alt"],
+.attachment-details .setting[data-setting="description"],
+.acf-gallery-side-data tr.acf-field[data-name="alt"]
+//.acf-gallery-side-data tr.acf-field[data-name="description"] 
+{
+		display:none !important;
+}
+/*
+.attachment-details .setting[data-setting="description"],
+.acf-gallery-side-data tr.acf-field[data-name="description"] {
+		display:none !important;
+}*/
+
+.acf-field[data-name="img_parallax_layers"] tr.acf-field,
+.acf-field[data-name="img_parallax_layers"] .media-types-required-info {
+		display:none !important;
+		&.acf-field[data-name="parallax_amount"] {
+			display:table-row !important;
+		}
+}
+
+.acf-field.title input {
+	font-weight: bold;
+}
+
+
+.layout[data-layout="slider"] *[data-type="gallery"][data-name="images"] {
+
+		*[data-name="align"],
+		*[data-name="is_full"],
+		*[data-name="is_flex"],
+		*[data-name="is_full_xs"],
+		*[data-name="is_flex_xs"],
+		*[data-type="message"],
+		*[data-name="parallax_amount"],
+		*[data-name="parallax_page"] {
+				display:none !important;
+		}	
+
+}
+
+[data-name="pag_modules"] [data-name="title"] textarea {
+	font-size:30px;
+	line-height: 1.2em;
+	text-align:center;
+	max-width: 8em;
+	margin: 0 auto;
+	display:block;
+	float:none;
+}
+
+[data-name="pag_modules"] > .acf-input > .acf-repeater > .acf-table > tbody > tr.acf-row {
+	.button-primary {
+		background: rgb(180,180,180);
+	}
+	.acf-flexible-content > .acf-actions > .button-primary {
+		background: rgb(100,100,100) !important;
+	}
+	.acf-gallery-side-data tr.acf-field {
+		&:not([data-name="align"]):not([data-name="title"]):not([data-name="caption"]):not([data-name="alt"]){
+			display: none !important;
+		}
+		&[data-name="alt"]{
+			display: table-row !important;
+		}
+	}
+}
+[data-name="pag_modules"] > .acf-input > .acf-repeater > .acf-table > tbody > tr.acf-row:nth-child(even) {
+	&,
+	[data-name="module_content"],
+	[data-name="title"],
+	[data-name="title"] textarea {
+		background:#eee;
+	}
+	.acf-fields {
+		background:#ddd;
+	}
+	[data-name="collapse-layout"] {
+		background:rgb(249,249,249);
+	}
+} 

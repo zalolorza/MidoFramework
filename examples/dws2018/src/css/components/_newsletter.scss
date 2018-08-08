@@ -1,0 +1,174 @@
+input {
+    border-radius: 0;
+}
+
+#newsletter {
+    background:$dark-blue;
+    padding-top: 90px;
+    padding-bottom:149px;
+    &.layout-simple {
+        padding-top: 149px;
+    }
+    text-align: center;
+    color:white;
+    @include media-breakpoint-down(md){
+        padding-top: 64px;
+        padding-bottom:99px;
+        
+        &.layout-simple {
+            padding-top: 99px;
+        }
+    }
+    @include media-breakpoint-down(sm){
+        padding-top: 54px;
+        padding-bottom:79px;
+        &.layout-simple {
+            padding-top: 79px;
+        }
+    }
+    @include media-breakpoint-down(xs){
+        padding-top: 44px;
+        padding-bottom:31px;
+        
+    }
+}
+
+form {
+    width:100%;
+}
+
+.form-group-wrapper {
+    @include media-breakpoint-down(md){
+        max-width:508px;
+    }
+  
+}
+.form-group {
+    height:64px;
+    @include media-breakpoint-down(md){
+        height:44px;
+    }
+
+    @include media-breakpoint-down(xs){
+        height:64px;
+       margin-bottom:23px;
+       text-align:center;
+       width:100%;
+       max-width: none;
+       clear:both;
+       float:none;
+       flex-basis: 100%;
+    }
+
+    position:relative;
+    display:block;
+    margin-bottom:0;
+    input, button {
+       @include border-radius(0);
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        border:none;
+        box-shadow:none;
+        appearance: none;
+        -webkit-appearance: none;
+        @include placeholder($gray-text);
+        @include media-breakpoint-down(xs){
+            text-align: center;
+        }
+    }
+    input {
+        padding-left:30px;
+        @include media-breakpoint-down(md){
+            padding-left:12px;
+         }
+        @include media-breakpoint-down(xs){
+            padding-left:0;
+         }
+    }
+    &.form-group-submit {
+        max-width:206px;
+        text-align:center;
+        @include media-breakpoint-down(md){
+            max-width:141px;
+        }
+        @include media-breakpoint-down(xs){
+            max-width:none;
+        }
+        button {
+            background:$light-blue;
+            color:white;
+            @include transition(0.4s);
+            &:hover {
+                background:$black; 
+            }
+        }
+    }
+}
+
+.newsletter-text {
+
+    @include font('bold');
+
+    div:first-child {
+        opacity:0.7;
+        margin-bottom:16px;
+        @include media-breakpoint-down(md){
+            font-size: 16px;
+            margin-bottom:2px;
+        }
+    }
+    .big {
+        font-size: 40px;
+        line-height: 1.2em;
+        letter-spacing: -0.45px;
+        margin-bottom:34px;
+
+        @include media-breakpoint-down(md){
+            font-size: 28px;
+            line-height:32px;
+            margin-bottom:29px;
+         }
+        @include media-breakpoint-down(xs){
+            padding-left:0;
+            font-size: 22px;
+            line-height:26px;
+            margin-bottom:44px;
+            max-width:262px;
+            margin-left:auto;
+            margin-right:auto;
+         }
+    }
+}
+
+#mailchimp-form {
+    .notifications-group {
+        padding-top:15px;
+        min-height: 4em;
+        margin-bottom: -4em;
+
+        @include media-breakpoint-down(xs){
+            min-height: 2em;
+            padding-bottom: 10px;
+            margin-bottom: -2em;
+            padding-top: 0;
+            margin-top:-15px;
+        }
+
+        font-weight:normal;
+
+        a {
+            color:$light-blue;
+            &:hover {
+                color:white;
+            }
+        }
+    }
+
+    .notification {
+        display:none;
+    }
+    
+}

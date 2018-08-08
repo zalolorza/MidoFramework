@@ -1,0 +1,207 @@
+
+.section.section-featured-work {
+    margin-top:133px;
+    padding-bottom:100px;
+    margin-bottom:0;
+    @include media-breakpoint-down(md){
+        margin-top:115px;
+        padding-bottom:52px;
+    }
+    
+      @include media-breakpoint-down(sm){
+        margin-top:59px;
+        padding-bottom:84px;
+      }
+      .container {
+        position:relative;
+        z-index: 10;
+    }
+    &.layout-middle{
+        color:rgba(255,255,255,0.7);
+        margin-top:0 !important;
+        h2 {
+            color:white;
+        }
+        a {
+            &:hover {
+                color:white;
+            }
+        }
+        padding-top:96px;
+        @include media-breakpoint-down(md){
+            padding-top:90px;
+        }
+        
+        @include media-breakpoint-down(sm){
+            padding-top:56px;
+            margin-top:0;
+          }
+    }
+}
+
+.page-template-home-twig .section.section-featured-work {
+margin-top:100px;
+@include media-breakpoint-down(md){
+    margin-top:92px;
+}
+
+  @include media-breakpoint-down(sm){
+    margin-top:60px;
+  }
+}
+
+.single-video .section.section-featured-work {
+    margin-top:70px;
+    @include media-breakpoint-down(md){
+        margin-top:70px;
+    }
+    
+      @include media-breakpoint-down(sm){
+        margin-top:50px;
+      }
+}
+
+.featured-post {
+    @include media-breakpoint-only(md){
+        max-width:195px;
+        width:33.33%;
+    }
+
+    @include media-breakpoint-down(sm){
+       &:not(.featured-post-last){
+         margin-bottom:59px;
+       }
+    }
+
+
+    .featured-post-title {
+        margin-bottom: 30px;
+        @include media-breakpoint-down(md){
+            margin-bottom: 20px;
+        }
+      
+        &.layout-middle {
+            color:white;
+            @include media-breakpoint-down(sm){
+                &:not(.index-1){
+                    color:$dark-blue;
+                }
+            }
+        }
+    }
+
+    .featured-post-img {
+        margin-bottom: 30px;
+    }
+
+    .featured-post-excerpt {
+
+        &.layout-footer{
+            color:rgba(255,255,255,0.7);
+        }
+        
+        margin-bottom:20px;
+        @include media-breakpoint-down(sm){
+            &, &.layout-footer{
+                color:$black-50;
+            }
+            max-width: 262px;
+        }
+    }
+
+    .link {
+        color:$bright-blue;
+        &:hover {
+            &.layout-footer {
+                color:rgba(255,255,255,0.7);
+                @include media-breakpoint-down(sm){
+                    color:$dark-blue;
+                }
+            }
+            &.layout-middle {
+                color:$dark-blue;
+            }
+        }
+        @include media-breakpoint-down(sm){
+            text-decoration:underline;
+        }
+    }
+
+}
+
+.section-featured-work-posts {
+    overflow:hidden;
+    padding-bottom: 30px;
+    margin-top:0;
+    @include media-breakpoint-down(sm){
+        //padding-bottom:0;
+    }
+    .container {
+        position:relative;
+        z-index: 10;
+    }
+    &.layout-footer {
+        margin-bottom:0;
+    }
+    &.layout-middle {
+        
+    }
+}
+
+.featured-posts-background {
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    z-index: 1;
+    &.layout-footer {
+        @include media-breakpoint-down(sm){
+            display:none;
+        }
+    }
+    .footer-svg-wrapper {
+        
+        &.layout-footer {
+            background:white;
+            padding-top:96px;
+            @include media-breakpoint-only(md){
+                padding-top:56px;
+            }
+        }
+        &.layout-middle {
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            background:transparent;
+            @include translate(0,-100%,0);
+        }
+    }
+    .background-dark-blue {
+        background:$dark-blue;
+
+        &.layout-footer:not(.layout-modifier-simple){
+            top:10% !important;
+            height:90% !important;
+        }
+
+        &.layout-modifier-simple{
+            top:auto;
+            bottom:0;
+            height:60%;
+        }
+    }
+
+    &.featured-posts-background-list.layout-middle {
+        background:$dark-blue;
+        height:273px;
+        @include media-breakpoint-only(md){
+            height:139px;
+        }
+        @include media-breakpoint-only(sm){
+            height:176px;
+        }
+    }
+}
+

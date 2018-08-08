@@ -1,0 +1,31 @@
+
+{% extends "layout.twig"%}
+
+{% block content %}
+
+	{# include 'readmore_content.twig' with {content:post.content} #}
+
+    <section class="section section-first">
+        <div class="container">
+            <div class="row">
+                <div class="col-10 offset-1 offset-lg-0 col-md-6 col-lg-7">
+                    <h1>{{post.title}}</h1>
+                    {{post.content}}
+                </div>
+                <div class="col-10 offset-1 col-md-3 col-lg-4">
+                    <h3 class="no-margin-top categories-title">{{__('What we did')}}</h3>
+                    <ul class="categories no-style">
+                    {% for category in post.categories %}
+                        <li>{{category.name}}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include 'modules.twig' %}
+
+
+{% endblock %}
+

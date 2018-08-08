@@ -1,0 +1,17 @@
+
+
+.menu-content-login {
+    max-width:295px;
+}
+
+.message {
+    padding-bottom: 24px;
+    display:block;
+    font-weight: normal;
+        font-size:16px;
+        line-height:22px;
+    &.error {
+        color:$red;
+    }
+}
+

@@ -1,0 +1,15 @@
+<section class="gallery-still">
+
+    {% for image in gallery %}
+        {% set img = TimberImage(image) %}
+        <div class="relative big-trigger">
+            <picture>
+                <source srcset="{{ img|resize('750', '384') }}" media="(max-width: 414px)" />
+                <source srcset="{{ img|resize('1440', '982') }}" media="(max-width: 768px)" />
+                <img class="img-responsive" src="{{ img|resize('1440', '860') }}" />
+            </picture>
+            {% include 'video_vimeo.twig' with {video:image.video} %}
+        </div>
+    {% endfor %}
+    
+</section>

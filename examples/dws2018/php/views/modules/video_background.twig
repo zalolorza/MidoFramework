@@ -1,0 +1,9 @@
+
+{% if video %}
+<div class="video-wrapper fill-absolute" data-width="{{video.width}}" data-height="{{video.height}}">
+    <video muted loop>
+            <source data-src="{{video.mp4}}" type="video/mp4">
+            <source data-src="{{video.webm}}" type="video/webm">
+    </video>
+</div>
+{% endif %}

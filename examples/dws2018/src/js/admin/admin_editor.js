@@ -1,0 +1,1 @@
+import '../../css/admin/admin_editor.scss';

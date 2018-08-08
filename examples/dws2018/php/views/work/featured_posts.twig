@@ -1,0 +1,67 @@
+
+
+  <section class="section section-featured-work  layout-{{featured.layout}}">
+        {% include 'headline_text.twig' with {title: featured.title, text: featured.text ~ '<div class="link-after-p"><a href="'~ featured.link ~'">' ~ __('Explore Our Work') ~ '</a></div>' }%}
+
+        {% if featured.layout == 'middle' %}
+            <div class="featured-posts-background layout-{{featured.layout}}">
+                <div class="footer-svg-wrapper layout-{{featured.layout}}">
+                    {% include 'svg_diagonal.twig' %}
+                </div>
+                <div class="background-dark-blue layout-{{featured.layout}} fill-absolute">
+                    
+                </div>
+            </div>
+        {% endif %}
+  
+  </section>
+
+  <section class="section section-featured-work-posts layout-{{featured.layout}} layout-modifier-{{featured.layout_modifier}}-wrapper">
+    <div class="container ">
+        <div class="row">
+  
+            <div class="col-10 offset-1 offset-lg-0 col-lg-12">
+                <div class="row justify-content-between">
+
+                        {% for post in featured.posts %}
+            
+                            <div class="col-12 col-md-4 featured-post {{loop.last ? 'featured-post-last'}}">
+                                <a href="{{post.link}}" class="non-style">
+                                    <h4 class="featured-post-title layout-modifier-{{featured.layout_modifier}} layout-{{featured.layout}} index-{{loop.index}}">{{post.title}}</h4>
+                                    <div class="relative hover-zoom featured-post-img {{loop.first ? 'featured-post-img-first'}}">
+                                         <img src="{{post.thumbnail|resize(374,374)}}" class="img-responsive">
+                                        <div class="fill-absolute img-background hover-zoom-img" style="background-image:url({{post.thumbnail|resize(374,374)}})"></div>
+                                    </div>
+                                    <div class="featured-post-excerpt font-small layout-{{featured.layout}}">{{post.post_excerpt}}</div>
+                                    <span class="link no-underline  font-small layout-{{featured.layout}}">See more</span>
+                                </a>
+                            </div>
+
+                        {% endfor %}
+
+                </div>
+            </div>
+
+        </div>
+        
+        </div>
+    </div>
+
+    {% if featured.layout == 'footer' %}
+    <div class="featured-posts-background layout-{{featured.layout}} layout-modifier-{{featured.layout_modifier}}">
+        {% if featured.layout_modifier == 'diagonal' %}
+        <div class="footer-svg-wrapper layout-{{featured.layout}}">
+            {% include 'svg_diagonal.twig' %}
+        </div>
+        {% endif %}
+        <div class="background-dark-blue layout-{{featured.layout}} layout-modifier-{{featured.layout_modifier}}  fill-absolute">
+         
+        </div>
+    </div>
+    {% elseif featured.layout == 'middle' %}
+            <div class="featured-posts-background featured-posts-background-list layout-{{featured.layout}} fill-absolute">
+                
+            </div>
+    {% endif %}
+
+</section>

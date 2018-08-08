@@ -1,0 +1,39 @@
+{% extends "layout.twig" %}
+
+
+
+
+{% block main %}
+
+<main class="regular-content" id="private-area">
+        <div class="container">
+            <div class="row">
+                
+                    {% for group in technical_sheets_groups %}
+                        <div class="col-md-2 col-sm-3 col-xs-4 col-xxs-6 col-xxxs-12 downloads-group">
+                          <div class="center-xxxs">  <h2 class="h2-serif">{{group.title}}</h2>
+                            {% for download in group.downloads %}
+                                <a class="download-button" href="{{download.url}}" download>{{download.title}}</a>
+                            {% endfor %}
+                            </div>
+                        </div>
+                    {% endfor %}
+               
+                
+                     {% for group in page.get_field('download_groups')|reverse %}
+                     <div class="col-md-2 col-sm-3 col-xs-4 col-xxs-6 col-xxxs-12 pull-right">
+                        <div class="downloads-group center-xxxs">
+                            <h2 class="h2-serif">{{group.title}}</h2>
+                            {% for file in group.downloads %}
+                                <a class="download-button" href="{{file.download.url}}" download>{{file.download.title}}</a>
+                            {% endfor %}
+                        </div>
+                        </div>
+                    {% endfor %}
+           
+            </div>
+        </div>
+</main>
+    
+
+{% endblock %}

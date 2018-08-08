@@ -1,0 +1,52 @@
+{% extends "layout.twig" %}
+
+
+
+
+{% block main %}
+
+<div id="parallax-main">
+    <div class="parallax image-background" style="background-image:url({{TimberImage(page.thumbnail)|resize(1680,712)}})"></div>
+</div> 
+
+<main class="regular-content" id="contact">
+        
+        <div class="container">
+            <div class="row contact-content">
+               <div class="col-sm-3 col-xs-12 serif-small contact-form-title">
+                    <i>{{texts.form_contacte}}</i>
+               </div>
+               <div class="col-xs-12  col-lg-6 col-md-6 col-sm-9 h2-serif contact-description">
+                    {{page.content}}
+               </div>
+               <div class="clear"></div>
+
+               <div class="col-xxs-12 col-xs-7 col-sm-5 col-md-4 col-sm-offset-3">
+                    {% include 'contact-form.twig' with {form: form} %}
+               </div>
+
+                <div class="separator visible-xxs"></div>
+
+               <div class="col-xxs-12 col-xxs-offset-0 col-xs-4 col-xs-offset-1 col-sm-3 col-md-4 col-sm-offset-1 addresses">
+                    {% for address in page.get_field('addresses') %}
+                        <div class="address">
+                            <img src="{{address.logo}}" class="img-responsive">
+                            <address>
+                                {{address.address}}
+                            </address>
+                            {% if address.link_gmaps %}
+                            <a class="download-button" href="{{address.link_gmaps}}" target="_blank">{{texts.gmaps}}</a>
+                            {% endif %}
+
+                        </div>
+                    {% endfor %}
+               </div>
+            </div>
+            <div class="image-footer">
+                <img class="img-responsive" src="{{TimberImage(page.image_bottom)|resize(1160,597)}}">
+            </div>
+        </div>
+</main>
+    
+
+{% endblock %}

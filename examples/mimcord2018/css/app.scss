@@ -1,0 +1,51 @@
+
+/*  ==========================================================================
+  Import fonts
+  ========================================================================== */
+
+
+@import 'global/fonts';
+
+/*  ==========================================================================
+  Libs
+  ========================================================================== */
+
+  @import './node_modules/bootstrap/dist/css/bootstrap.min.css';
+  //@import './node_modules/bootstrap-select/sass/bootstrap-select.scss';
+  @import './node_modules/slick-carousel/slick/slick.scss';
+  @import './node_modules/magnific-popup/dist/magnific-popup.css';
+
+  /*  ==========================================================================
+  Global
+  ========================================================================== */
+
+  @import 'global/normalize';
+  @import 'global/colors';
+  @import 'global/mixins';
+ 
+  
+
+/*  ==========================================================================
+  Components
+  ========================================================================== */
+
+  @import 'components/form';
+  @import 'components/images';
+  @import 'components/buttons';
+  //@import 'components/scroll';
+  @import 'components/layout';
+  @import 'components/menu';
+  @import 'components/header';
+  @import 'components/header_layout';
+  @import 'components/footer';
+  @import 'components/magic-popup';
+  @import 'components/home';
+  @import 'components/product_category';
+  @import 'components/product_archive';
+  @import 'components/news';
+  @import 'components/private_area';
+  @import 'components/contact';
+  @import 'components/about_us';
+  @import 'components/login';
+  @import 'components/cookies';
+  

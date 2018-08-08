@@ -1,0 +1,39 @@
+
+
+{% extends "layout.twig" %}
+
+
+
+
+{% block main %}
+
+<div id="login-page">
+
+
+	<div class="background-wrapper-login login-page"></div>	
+
+
+	<div class="content-wrapper-login">
+
+		<div class="col-half col-half-left">
+				<div class="logo-login logo-menu-login login-page" style="min-width:16.2em;">
+					<h1 style="min-width:5.3em;">{{page.title}}</h1>
+					<div style="width:258px;">Àrea exclusiva per a usuaris registrats, pot demanar el seu registre <a href="mailto:mimcord@mimcord.com">aquí</a></div>
+				</div>
+		</div>
+
+		<div class="col-half col-half-right col-half-right-login">
+			<div class="menu-content-login">{% include 'login-form.twig' %}</div>
+			<div class="copyright-login tagline-menu-login login-page">© Mimcord SA</div>
+		</div>
+
+	</div>
+	
+</div>
+    
+
+{% endblock %}
+
+
+	
+	

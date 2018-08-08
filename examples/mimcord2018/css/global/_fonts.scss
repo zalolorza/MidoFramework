@@ -1,0 +1,186 @@
+@import '../global/fonts_import';
+@import '../global/colors';
+@import '../global/mixins';
+
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: $gray;
+}
+p {
+	margin-bottom:0;
+	padding-bottom:0;
+	margin-top:0;
+	padding-top:0;
+}
+a {
+	color:inherit;
+	text-decoration: none;
+	
+}
+.cheltenham, 
+h1,, h3, h4, h5, h6,
+.h1, .h2-serif, .h2-serif p, .h3, .h4, .h5, h6,
+.menu-content,
+.serif-small,
+.serif-text, .milestone-text {
+	@include font(Cheltenham);
+	
+	em, strong, b {
+		@include font(Cheltenham);
+	}
+
+	i {
+		@include font(Cheltenham, italic);
+	}
+}
+h1, h2, h3, h4, h5, h6,
+.h1, .h2-serif, .h3, .h4, .h5, .h6 {
+	padding-top:0;
+	padding-bottom: 0;
+	margin-top:0;
+	margin-bottom: 0;
+}
+
+.avenir, .sans, .slider-h1, 
+p, .read,
+.button,
+address,
+caption,
+.header-trigger,
+body,
+h2, .h2,
+.milestone-year {
+	@include font(Avenir);
+	em, strong, b {
+		@include font(Avenir);
+	}
+}
+
+h1, .h1 {
+	font-size:46px;
+	line-height: 46px;
+	@include breakpoint('xxs'){
+		font-size:36px;
+		line-height: 40px;
+	}
+}
+
+h2, .h2, .h2-serif {
+	font-size:30px;
+	line-height: 33px;
+}
+
+address {
+	line-height: inherit;
+}
+
+.slider-h1 {
+	font-size:60px;
+	line-height: 64px;
+	text-align:center;
+	@include breakpoint('xs'){
+		font-size:36px;
+		line-height: 40px !important;
+	}
+}
+.menu-content {
+	font-size:32px;
+	line-height:46px;
+}
+body {
+	font-size:15px;
+	line-height: 20px;
+}
+.header-trigger,
+.font-home {
+	font-size:17px;
+	line-height: 17px;
+}
+.milestone-year{
+	font-size:15px;
+	line-height: 21px;
+}
+
+.serif-text, .milestone-text {
+	font-size:16px;
+	line-height: 22px;
+}
+.serif-small {
+	font-size:20px;
+	line-height: 26px;
+}
+
+#footer {
+	font-size:12px;
+	line-height: 18px;
+}
+
+a, a:hover, a:link, a:visited {
+	text-decoration: none;
+	color:inherit;
+
+}
+
+p a {
+	color:inherit !important;
+	text-decoration: underline;
+	@include transition(all 0.3s);
+	&:hover {
+		opacity:0.5;
+	}	
+}
+
+.underline-inlineblock,
+.download-link  {
+	display:inline-block;
+	color:inherit !important;
+	text-decoration: none !important;
+	border-bottom:1px solid $gray;
+	@include transition(all 0.3s);
+	&:hover {
+		opacity:0.5;
+	}
+}
+
+.download-link {
+	padding-left:20px;
+	background-image: url(../images/download.svg);
+	background-position: left center;
+	background-size: 11px 6px;
+	background-repeat: no-repeat;
+}
+
+.download-button {
+	display:block;
+	width: 100%;
+	max-width: 180px;
+	text-align: center;
+	border:1px solid $gray;
+	padding-top: 18px;
+	padding-bottom: 14px;
+	margin-bottom: 10px;
+	@include transition(all 0.3s);
+	
+	&:hover {
+		color:white;
+		background:$gray;
+	}
+}
+
+.hover-opacity {
+	@include transition(opacity 0.3s);
+	opacity:1;
+	&:hover {
+		opacity:0.5;
+	}
+}
+
+.underline-links a {
+	border-bottom:1px solid white;
+	@include transition(opacity 0.3s);
+	&:hover {
+		opacity:0.5;
+	}
+}
+

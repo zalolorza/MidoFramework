@@ -1,0 +1,83 @@
+@import url("//hello.myfonts.net/count/361ec8");
+  
+@font-face {
+	font-family: 'HelveticaNeueLTStd';
+	src: url('#{$src_path}fonts/361EC8_0_0.eot');src: url('#{$src_path}fonts/361EC8_0_0.eot?#iefix') format('embedded-opentype'),url('#{$src_path}fonts/361EC8_0_0.woff2') format('woff2'),url('#{$src_path}fonts/361EC8_0_0.woff') format('woff'),url('#{$src_path}fonts/361EC8_0_0.ttf') format('truetype');
+	font-style: normal;
+	font-weight: bold;
+}
+ 
+  
+@font-face {
+	font-family: 'HelveticaNeueLTStd';
+	src: url('#{$src_path}fonts/361EC8_1_0.eot');src: url('#{$src_path}fonts/361EC8_1_0.eot?#iefix') format('embedded-opentype'),url('#{$src_path}fonts/361EC8_1_0.woff2') format('woff2'),url('#{$src_path}fonts/361EC8_1_0.woff') format('woff'),url('#{$src_path}fonts/361EC8_1_0.ttf') format('truetype');
+	font-style: normal;
+	font-weight: normal;
+}
+ 
+  
+@font-face {
+	font-family: 'HelveticaNeueLTStd-Cd';
+	src: url('#{$src_path}fonts/361EC8_2_0.eot');src: url('#{$src_path}fonts/361EC8_2_0.eot?#iefix') format('embedded-opentype'),url('#{$src_path}fonts/361EC8_2_0.woff2') format('woff2'),url('#{$src_path}fonts/361EC8_2_0.woff') format('woff'),url('#{$src_path}fonts/361EC8_2_0.ttf') format('truetype');
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: 'HelveticaNeueLTStd';
+	/*src: url('#{$src_path}fonts/HelveticaNeueLTStd-It.eot');
+	src: url('#{$src_path}fonts/HelveticaNeueLTStd-It.woff2') format('woff2'),
+		 url('#{$src_path}fonts/HelveticaNeueLTStd-It.woff') format('woff'),
+		 url('#{$src_path}fonts/HelveticaNeueLTStd-It.ttf') format('truetype'),
+		 url('#{$src_path}fonts/HelveticaNeueLTStd-It.svg#HelveticaNeueLTStd-It') format('svg'),
+		 url('#{$src_path}fonts/HelveticaNeueLTStd-It.eot?#iefix') format('embedded-opentype');*/
+	src: url('#{$src_path}fonts/HelveticaNeueLTStd-MdIt.eot');
+	src: url('#{$src_path}fonts/HelveticaNeueLTStd-MdIt.woff2') format('woff2'),
+		 url('#{$src_path}fonts/HelveticaNeueLTStd-MdIt.woff') format('woff'),
+		 url('#{$src_path}fonts/HelveticaNeueLTStd-MdIt.ttf') format('truetype'),
+		 url('#{$src_path}fonts/HelveticaNeueLTStd-MdIt.svg#HelveticaNeueLTStd-MdIt') format('svg'),
+		 url('#{$src_path}fonts/HelveticaNeueLTStd-MdIt.eot?#iefix') format('embedded-opentype');
+	font-weight: normal;
+	font-style: italic;
+  }
+
+  @font-face {
+	font-family: 'HelveticaNeueLTStd';
+	src: url('#{$src_path}fonts/HelveticaNeueLTStd-BdIt.eot');
+	src: url('#{$src_path}fonts/HelveticaNeueLTStd-BdIt.woff2') format('woff2'),
+		 url('#{$src_path}fonts/HelveticaNeueLTStd-BdIt.woff') format('woff'),
+		 url('#{$src_path}fonts/HelveticaNeueLTStd-BdIt.ttf') format('truetype'),
+		 url('#{$src_path}fonts/HelveticaNeueLTStd-BdIt.svg#HelveticaNeueLTStd-BdIt') format('svg'),
+		 url('#{$src_path}fonts/HelveticaNeueLTStd-BdIt.eot?#iefix') format('embedded-opentype');
+	font-weight: bold;
+	font-style: italic;
+  }
+  
+  
+  
+
+
+@mixin font($type : 'normal'){
+
+	font-style: normal;
+
+    @if $type == "condensed" {
+        font-family: 'HelveticaNeueLTStd-Cd',Helvetica,Arial,sans-serif;
+		font-weight: normal;
+    } @else {
+        font-family: 'HelveticaNeueLTStd',Helvetica,Arial,sans-serif;
+		
+		@if $type == "bold" {
+			font-weight: bold;
+		} @else {
+			font-weight: normal;
+		}
+	}
+	
+	i, em {
+		font-style: italic;
+	}
+}
+ 
+
+

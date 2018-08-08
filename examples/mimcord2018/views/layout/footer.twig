@@ -1,0 +1,65 @@
+{% if show_footer %}
+
+<footer id ="footer" class="{{footerClass}}">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-xs-6 col-xxs-12">
+                <a href="{{site.url}}" class="logo-footer">
+                    Mimcord
+                </a>
+            </div>
+            <div class="col-xs-6 col-sm-9 col-xxs-12">
+
+                <div class="footer-content-module language hidden-xxs">
+                    {{texts.language}}<br>
+                     {% for lang in menus.langs %}
+                        <a href="{{lang.url}}">{{lang.name}}</a><br>
+                    {% endfor %}
+                </div>
+                <div class="footer-content-module copyright hidden-xs">
+                    {{texts.copyright}}<br>
+                    {% for item in menus.footer %}
+						<a href="{{item.url}}">{{item.title}}</a><br>
+				    {% endfor %}
+                    {{texts.telf}}<br>
+                    <a href="mailto:{{texts.email}}">{{texts.email}}</a>
+                </div>
+                <address class="footer-content-module address">
+                    <div class="visible-xs">
+                        {{texts.mimcordSA}}
+                    </div>
+                    {{texts.address}}
+                    <div class="visible-xs">
+                        {{texts.telf}}<br>
+                        <a href="mailto:{{texts.email}}">{{texts.email}}</a>
+                    </div>
+                </address>
+                <div class="footer-content-module language visible-xxs">
+                    {{texts.language}}<br>
+                    {% for lang in menus.langs %}
+                        <a href="{{lang.url}}">{{lang.name}}</a><br>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if footerClass == 'footer-complete' %}
+    <div class="footer-bottom">
+        <div class="container-fluid text-right">
+     
+
+                <a href="https://gassiotllobet.com/" target="_blank" class="ssll-link text-left">SSLL</a>
+
+                <span class="scroll-top hover-opacity"></span>
+                    <img class="segell" src="{{theme.path}}/images/segell-empresa-lliure-co2.svg" width="93" height="50">
+                    <img class="segell" src="{{theme.path}}/images/segell-fsc.svg" width="49" height="60">
+                    <img class="segell" src="{{theme.path}}/images/segell-pefc.svg" width="44" height="60">
+                    <img class="segell" src="{{theme.path}}/images/segell-qualitat-ambiental.svg" width="60" height="138">
+             <div class="clear"></div>
+       
+        </div>
+    </div>
+    {% endif %}
+</footer>
+
+{% endif %}

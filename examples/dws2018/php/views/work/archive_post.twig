@@ -1,0 +1,31 @@
+
+{% extends "layout.twig"%}
+
+{% block content %}
+
+<section class="section section-first section-archive-posts">
+
+ <div class="container ">
+    <div class="row">
+        <div class="col-10 offset-1 offset-lg-0 col-lg-12">
+            <div class="row justify-content-between">
+                {% for post in posts %}
+                    <div class="col-12 col-sm-6 archive-posts-post">
+                        <a href="{{post.link}}" class="no-style">
+                            <div class="archive-posts-post-title">{{post.title}}</div>
+                            <div class="relative">
+                                {% set img = post.thumbnail|resize(580,580) %}
+                                <img src="{{img}}" class="img-responsive">
+                                <div class="fill-absolute img-background" style="background-image:url({{img}})"></div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+</section>
+
+{% endblock %}

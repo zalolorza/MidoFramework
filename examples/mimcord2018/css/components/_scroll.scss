@@ -1,0 +1,323 @@
+
+
+.is-scrolling {
+    will-change: scroll-position;
+}
+
+.is-native-scroll.y-scroll {
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.is-native-scroll.x-scroll {
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.vs-section {
+    position: fixed;
+    top: 0; right: 0; left: 0;
+    width: 100%; height: auto;
+    margin: auto;
+    text-align: center;
+    will-change: transform;
+}
+
+.vs-scrollbar {
+    display: block;
+    position: absolute;
+    transition: transform .6s;
+}
+
+.vs-scrollbar.vs-vertical {
+    top: 0; right: -5px; bottom: 0;
+    width: 15px; height: 100%;
+    transform: translate3d(5px,0,0);
+}
+
+.vs-scrollbar.vs-horizontal {
+    bottom: -5px; left: 0; right: 0;
+    width: 100%; height: 15px;
+    transform: translate3d(0,5px,0);
+}
+
+.is-dragging .vs-scrollbar.vs-horizontal,
+.is-dragging .vs-scrollbar.vs-vertical,
+.vs-scrollbar.vs-horizontal:hover,
+.vs-scrollbar.vs-vertical:hover {
+    transform: none;
+}
+
+.vs-scrollbar .vs-scrolldrag {
+    width: 100%;
+    height: auto;
+    background: #ccc;
+    cursor: pointer;
+}
+
+.vs-scroll-view {
+    position: relative;
+    width: 1px;
+}
+
+*[data-parallax]{
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: transform;
+  &:not(.parallax-initialized) {
+      opacity:0;
+  }
+}
+
+*[data-opacity]{
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: opacity;
+  &:not(.parallax-initialized) {
+      opacity:0;
+  }
+}
+
+.vs-controller {
+  position:fixed;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: transform;
+  top:0;
+  left:0;
+  width:100%;
+  height:auto;
+  z-index: 9;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transform-origin: 50vw 50vh;
+  -ms-transform-origin: 50vw 50vh;
+  transform-origin: 50vw 50vh;
+
+  &.vs-controller-active {
+      z-index: 1;
+      position:relative;
+  }
+
+  &.show-for-resize {
+    position: absolute !important;
+
+    width:100% !important;
+    display: block !important;
+    z-index: -99 !important;
+    opacity:0 !important;
+    @include transform(scale(1) !important);
+
+    @include transition(all 0s !important);
+    .vs-controller-content {
+      top:0 !important
+    }
+    * {
+      @include transition(all 0s !important);
+    }
+  }
+}
+
+.vs-controller-content {
+  position:relative !important;
+  overflow: hidden;
+  display: block;
+}
+
+
+@-webkit-keyframes animate-background-in {
+    from {
+        -webkit-transform:  scale(0.85);
+        transform: scale(0.85)
+    }
+
+    to {
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+}
+
+@keyframes animate-background-in {
+  from {
+      -webkit-transform:scale(0.85);
+      transform: scale(0.85)
+  }
+
+  to {
+      -webkit-transform: scale(1);
+      transform: scale(1)
+  }
+}
+
+
+@-webkit-keyframes animate-background-out {
+    from {
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+
+    to {
+        -webkit-transform: scale(0.85);
+        transform: scale(0.85)
+    }
+}
+
+@keyframes animate-background-out {
+    from {
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+
+    to {
+        -webkit-transform: scale(0.85);
+        transform: scale(0.85)
+    }
+}
+
+.vs-controller.vs-show-main {
+    -webkit-animation: animate-background-in;
+    animation: animate-background-in;
+    -webkit-animation-duration: .8s;
+    animation-duration: .8s;
+    -webkit-animation-timing-function: cubic-bezier(0.11, 0.045, 0.185, 1);
+    animation-timing-function: cubic-bezier(0.11, 0.045, 0.185, 1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    position:fixed;
+    left:0;
+    width:100%;
+    height:100%;
+    overflow: visible;
+}
+
+.vs-controller.vs-hide-main {
+  position:fixed;
+  left:0;
+  width:100%;
+  height:100%;
+  overflow: visible;
+  -webkit-animation: animate-background-out;
+  animation: animate-background-out;
+  -webkit-animation-duration: .8s;
+  animation-duration: .8s;
+  -webkit-animation-timing-function: cubic-bezier(0.11, 0.045, 0.185, 1);
+  animation-timing-function: cubic-bezier(0.11, 0.045, 0.185, 1);
+  -webkit-transform: scale(0.85);
+  transform: scale(0.85)
+}
+
+
+.vs-overlay {
+    color:$white;
+    background: $black;
+    overflow: hidden;
+    min-height: 100vh;
+    @include translate(0,100%,0);
+    opacity:0;
+}
+
+
+@-webkit-keyframes animate-overlay-out {
+  from {
+      @include translate(0,0%,0);
+  }
+
+  to {
+    @include translate(0,100%,0);
+  }
+}
+
+@keyframes animate-overlay-out {
+    from {
+        @include translate(0,0%,0);
+    }
+
+    to {
+      @include translate(0,100%,0);
+    }
+}
+
+@-webkit-keyframes animate-overlay-in {
+  from {
+      @include translate(0,100%,0);
+  }
+
+  to {
+    @include translate(0,0%,0);
+  }
+}
+
+@keyframes animate-overlay-in {
+    from {
+        @include translate(0,100%,0);
+    }
+
+    to {
+      @include translate(0,0%,0);
+    }
+}
+.vs-controller.vs-hide-overlay {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    overflow: hidden;
+    -webkit-animation: animate-overlay-out;
+    animation: animate-overlay-out;
+    -webkit-animation-duration: .8s;
+    animation-duration: .8s;
+    -webkit-animation-timing-function: cubic-bezier(0.11, 0.045, 0.185, 1);
+    animation-timing-function: cubic-bezier(0.11, 0.045, 0.185, 1);
+
+    @include translate(0,100%,0);
+}
+
+.vs-controller.vs-show-overlay {
+    position:fixed;
+    top:-1;
+    left:0;
+    width:100%;
+    height:100%;
+    overflow: hidden;
+    -webkit-animation: animate-overlay-in;
+    animation: animate-overlay-in;
+    -webkit-animation-duration: .625s;
+    animation-duration: .625s;
+    -webkit-animation-timing-function: cubic-bezier(0.29, 0.24, 0.12, 0.995);
+    animation-timing-function: cubic-bezier(0.29, 0.24, 0.12, 0.995);
+
+    @include translate(0,0%,0);
+}
+
+#vs-main.vs-controller.vs-scroll-on .vs-controller-content {
+
+    top:0px !important;
+
+}
+.vs-overlay.vs-controller.vs-scroll-on .vs-controller-content {
+
+    top:-1px !important;
+
+}
+
+.vs-scroll-on {
+
+
+    @include transform(translate3d(0,0%,0)scale(1));
+
+    position:relative !important;
+
+    .vs-controller-content {
+      top: 0 !important;
+    }
+}
+
+
+body.has-local-nav .vs-controller .vs-controller-content {
+  border-top: 38px solid transparent;
+}
+
+body.header-is-transparent .vs-controller .vs-controller-content {
+  overflow:visible;
+}

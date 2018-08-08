@@ -1,0 +1,51 @@
+{% include 'menu.twig' %}
+
+<div id="menuTrigger" class="hover-opacity header-trigger openMenu header-text-color">
+	{{texts.menutrigger}}
+</div>
+
+
+<a id="imagotipHeader" href="{{site.url}}" class="">
+	Mimcord
+</a>
+
+<a id="nansesTrigger" href="{{menus.nanses.url}}" class="hover-opacity header-trigger header-text-color">
+	{{menus.nanses.title}}
+</a>
+
+
+{% if header.display %}
+
+	<header id="header" class="{{header.class}}">
+
+		<div class="header-wrapper image-background {{header.parallaxClass}}">
+			<div class="header-content">
+				<div class="container">
+					<div class="tagline {{headerRight ? 'is-large'}}">
+						{% if headerRight %}
+							<div class="visible-xs text-underline underline-links logout-link">{{headerRight}}</div>
+						{% endif %}
+						{{header.tagline}}
+					</div>
+
+					{% if headerRight %}
+						<div class="headerRight hidden-xs underline-links">{{headerRight}}</div>
+					{% endif %}
+
+					<h1>{{header.title}}</h1>
+					
+				</div>
+			</div>
+
+			{% if header.has_image  %}
+				<div class="mask"></div>
+				<style>
+					.header-wrapper {
+						background-image: url({{TimberImage(header.background)|resize(1440,426)}});
+					}
+				</style>
+			{% endif %}
+		</div>
+	</header>
+
+{% endif %}
