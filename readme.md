@@ -362,6 +362,18 @@ class PagesController extends MidoController {
 # 5. Views
 1. This is
 
+## Herarchy
+
+### Taxonomies
+```php
+$taxName.'.twig'
+'tax_'.$taxName.'.twig'
+'archive_'.$taxName.'.twig'
+'index_'.$taxName.'.twig'
+'archive.twig'
+'index.twig'
+````
+
 ---
 
 # 6. Others
