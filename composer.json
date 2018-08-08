@@ -1,0 +1,14 @@
+{
+    "require" : {
+        "asm89/twig-cache-extension": "*",
+        "timber/timber": "*"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Mido\\":"mido/",
+            "MidoController\\":"controllers/"
+        }
+    }
+
+}
