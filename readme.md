@@ -202,7 +202,7 @@ scriptnameforaspecificaction = '/dist/scriptname_action.js'
 
 ## Basic controller sintaxis
 ````
-class ControllerName extends MidoController  {
+class NameController extends MidoController  {
 
 	function _init(){
 	
@@ -219,7 +219,7 @@ Like other MVC PHP frameworks, Mido uses a Controller->Action architecture. Anyt
 
 ### Render
 ````
-class ControllerName extends MidoController  {
+class NameController extends MidoController  {
 
 	function _init(){
 	
@@ -233,9 +233,11 @@ class ControllerName extends MidoController  {
 	}
 } 
 ````
-1) Set any var as a variable of the controller to make it available in the Twig view. 
+1) Set any var as a variable within the scope of the controller to make it available in the Twig view. 
 
-2) Use `$this->render()` to render the default Twig view. Mido uses a template hierarchy system that mimics and improves [WordPress template hierarchy](https://developer.wordpress.org/themes/basics/template-hierarchy/)
+2) Use `$this->render()` to render the default Twig view. Mido uses a template hierarchy system that mimics and extends [WordPress template hierarchy](https://developer.wordpress.org/themes/basics/template-hierarchy/). 
+
+3) You can skip Mido's hierarchy by specifying your own template: `$this->render('your-better-template.twig')`. Directory is not requiered, only the file name. It will render the first twig file with the same filename located in any subdirectory inside of `/views`.
 
 ### Posts and CPT
 ### Pages
