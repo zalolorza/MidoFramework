@@ -369,6 +369,8 @@ Managers are allways available from any controller (in other words, all php file
 
 Managers can extend `MidoManager` class, so they can benefit of the [actions and filters Mido's functionality](#action_--and--filter_).
 
+Use the managers to add functionality to your theme. Managers are classes that query, parse, create or modify data. Managers should be only instanced within the bootstrap files or the controllers, but never called by themselves from the managers directory. Managers itself are simply a library of PHP structured classes.
+
 ---
 
 # 5. Views
