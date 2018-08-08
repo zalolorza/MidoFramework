@@ -1,10 +1,12 @@
 # MidoFramework - A MVC framework for WordPress
-WordPress plugin that runs an MVC framework the top of WordPress. It uses [Timber](https://timber.github.io/) to render [Twig](https://twig.symfony.com/) views. **This plugin is still experimental and Beta, don't use it in your sites (I do because I know my code)**
+WordPress plugin that runs an MVC framework the top of WordPress. It uses [Timber](https://timber.github.io/) to render [Twig](https://twig.symfony.com/) views.
+
+**This plugin is still experimental, DON'T use it in your sites (I do because I know my code)**
 
 ## 0. Contents
 
 1. [Installation](#1-installation)
-2. [Bootstrap & Init](#2-bootstrap-and-initialization)
+2. [Bootstrap and initializaton](#2-bootstrap-and-initialization)
 3. [Controllers](#3-controllers)
 4. [Managers](#4-managers)
 5. [Views](#5-views)
@@ -279,3 +281,5 @@ Each post
 
 # 7. Examples
 1. This is
+
+**This plugin is still experimental, DON'T use it in your sites (I do because I know my code)**
