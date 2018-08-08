@@ -4,7 +4,7 @@ WordPress plugin that runs an MVC framework the top of WordPress. It uses [Timbe
 ## Contents
 
 1. Installation
-2. [Bootstrap & Init](#Bootstrap & Init)
+2. [Bootstrap & Init](#Bootstrap-and-initialization)
 3. [Controllers](#Controllers)
 
 ## Installation
@@ -43,7 +43,7 @@ Mido will start the php app from the directory where `bootstrap.php` is allocate
 
 
 
-# Bootstrap & Init
+# Bootstrap and initialization
 
 * `bootstrap.php` is always called when the framework is initialized. Here you can set some globals, like Mido Globals:
 
