@@ -38,6 +38,8 @@ Mido will start the php app from the directory where `bootstrap.php` is allocate
 ````
 
 
+
+
 ## Bootstrap
 
 * `bootstrap.php` is always called when the framework is initialized. Here you can set some globals, like Mido Globals:
@@ -69,7 +71,7 @@ class BootstrapAdmin extends MidoBootstrap {
 }
 `````
 
-### action_ and filter_
+### action_  and  filter_
 
 Any method inside the classes `Bootstrap` and `BootstrapAdmin` that starts with `action_` equals to: `add_action()` WordPress function. The same with WordPress filters. For example:
 
@@ -91,7 +93,11 @@ class Bootstrap extends MidoBootstrap {
 
 The cool thing is that the scope inside the action will be the parent class.
 
+If you add a number at the end of the action name, like `action_admin_init_99` it'll be interpretated as the priority value.
+
 This also applies for `Managers` that extend `MidoManager`.
+
+
 
 
 ## Init
@@ -192,7 +198,10 @@ scriptnameforaspecificaction = '/dist/scriptname_action.js'
 
 `````
 
-## /Controllers
+
+
+
+## Controllers
 
 ### Basic controller sintaxis
 ````
